@@ -6,7 +6,6 @@ const assertEqual = function(actual, expected) {
 };
 
 const tail = function(array) {
-  //return array.lastIndexOf(array);
   const newArray = array.slice(1);
   console.log(newArray);
 };
