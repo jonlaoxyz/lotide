@@ -1,0 +1,24 @@
+const assertArraysEqual = function(array1, array2) {
+  if (eqArrays(array1, array2)) {
+    return console.log(`❤️  Assertion Passed: ${array1} === ${array2}`);
+  }
+  return console.log(`👎 Assertion Failed: ${array1} !== ${array2}`);
+};
+
+const eqArrays = (array1, array2) =>
+  array1.length === array2.length &&
+    array1.every((element, index) => element === array2[index]);
+
+const without = function(source, itemsToRemove) {
+  const index = source.indexOf(itemsToRemove)
+  console.log(index);
+  return index;
+};
+
+
+const words = ["hello", "world", "lighthouse"];
+without(words, ["lighthouse"]); // no need to capture return value for this test case
+// Make sure the original array was not altered by the without function
+without([1, 2, 3], [1]) // => [2, 3]
+without(["1", "2", "3"], [1, 2, "3"]) // => ["1", "2"]
+assertArraysEqual(words, ["hello", "world", "lighthouse"]);
