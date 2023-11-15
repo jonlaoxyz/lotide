@@ -13,12 +13,12 @@ const assertArraysEqual = function(array1, array2) {
 
 const middle = function(array) {
   if (!array.length)
-    return array = [];
+    return [];
   if (array.length === 2 || array.length === 1)
-    return array = [];
+    return [];
   const mid = array.length / 2;
   if (array.length % 2 === 1) {
-    return array[Math.floor(mid)];
+    return [array[Math.floor(mid)]];
   } else {
     return [
       array[mid - 1],
