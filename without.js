@@ -10,9 +10,13 @@ const eqArrays = (array1, array2) =>
     array1.every((element, index) => element === array2[index]);
 
 const without = function(source, itemsToRemove) {
-  const index = source.indexOf(itemsToRemove);
-  console.log(index);
-  return index;
+  for (let i = source.length - 1; i >= 0; --i) {
+    if (source[i] === itemsToRemove) {
+      source.splice(i, 1); // Remove even numbers
+    }
+    console.log(source);
+    return source;
+  }
 };
 
 
@@ -22,3 +26,5 @@ without(words, ["lighthouse"]); // no need to capture return value for this test
 without([1, 2, 3], [1]); // => [2, 3]
 without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+let result = without([1, 2, 3], [1]); // => [2, 3]
+assertArraysEqual(result, [2, 3]); // => should PASS
