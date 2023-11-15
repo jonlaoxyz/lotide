@@ -14,9 +14,9 @@ const without = function(source, itemsToRemove) {
     if (source[i] === itemsToRemove) {
       source.splice(i, 1); // Remove even numbers
     }
-    console.log(source);
-    return source;
   }
+  console.log(source);
+  return source;
 };
 
 
