@@ -5,14 +5,10 @@ const assertEqual = function(actual, expected) {
   return console.log(`❤️  Assertion Passed: ${actual} === ${expected}`);
 };
 
-
-
-const eqArrays = function(array1, array2) {
-  if (array1.toString() === array2.toString()) {
-    return true;
-  }
-  return false;
-};
+const eqArrays = (array1, array2) =>
+  array1.length === array2.length &&
+    array1.every((element, index) => element === array2[index]);
+  //  if (array1.toString() === array2.toString())
 
 
 /*
