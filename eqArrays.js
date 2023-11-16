@@ -1,4 +1,5 @@
-const assertArraysEqual = function(array1, array2) {
+
+const assertEqual = function(array1, array2) {
   if (eqArrays(array1, array2)) {
     console.log(`❤️  Assertion Passed: ${array1} === ${array2}`);
   } else {
@@ -6,18 +7,22 @@ const assertArraysEqual = function(array1, array2) {
   }
 };
 
-const eqArrays = (array1, array2) =>
-  array1.length === array2.length &&
-    array1.every((element, index) => element === array2[index]);
 
+const eqArrays = function(array1,array2) {
+  if (array1.length !== array2.length) {
+    return false;
+  } else {
+    for (let i = 0; i < array1.length; i++) {
+      if (Array.isArray(array1[i]) && Array.isArray(array2[i])) {
+        if (!eqArrays(array1[i],array2[i])) return false;
+      } else if (array1[i] !== array2[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+};
 
-/*
-eqArrays([1, 2, 3], [1, 2, 3]); // => true
-eqArrays([1, 2, 3], [3, 2, 1]); // => false
-
-eqArrays(["1", "2", "3"], ["1", "2", "3"]); // => true
-eqArrays(["1", "2", "3"], ["1", "2", 3]); // => false
-*/
 
 //
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
