@@ -8,7 +8,7 @@ const assertEqual = function(actual, expected) {
 
 const findKeyByValue = function(input,search) {
   for (let key of Object.keys(input)) {
-    if (input[key].includes(search)) return key;
+    if (input[key] === search) return key;
   }
   return;
 };
