@@ -11,6 +11,9 @@ describe("#tail", () => {
   it("returns [] for []", () => {
     assert.deepEqual(tail([]), []);
   });
+  it("returns [1] for []", () => {
+    assert.deepEqual(tail(['1']), []);
+  });
 });
 
 
