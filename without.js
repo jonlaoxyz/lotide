@@ -20,6 +20,7 @@ const without = function(source, itemsToRemove) {
   return source;
 };
 
+module.exports = without;
 
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]); // no need to capture return value for this test case

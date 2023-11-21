@@ -14,6 +14,7 @@ const findKey = (array, callback) => {
   }
 };
 
+module.exports = findKey;
 
 const key = findKey({
   "Blue Hill": { stars: 1 },
